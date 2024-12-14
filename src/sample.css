@@ -1,0 +1,69 @@
+
+body{
+  background-color: rgb(8, 4, 84);;
+}
+
+.box {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(210, 203, 203);
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: aliceblue;
+}
+
+
+:root {
+  --box-size: 100px;
+  --mark-size: calc(var(--box-size) * 0.9);
+}
+ .box.x,     /*Once they r clicked they prevent the cursor to click again as a disable function in input box or div */
+.box.circle {
+  pointer-events: none;
+}
+
+.box.x::before ,
+.box.x::after,
+.box:not(.x):not(.circle):hover::before,
+.box:not(.x):not(.circle):hover::after{
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+  background-color: white;
+}
+
+.box.x::before,
+.box:not(.x):not(.circle):hover::before{
+  transform: rotate(45deg);
+}
+.box.x::after ,
+.box:not(.x):not(.circle):hover::after{
+  transform: rotate(-45deg);
+}
+
+
+.box.circle::before ,
+.box:not(.x):not(.circle):hover::before{
+  width: var(--mark-size);
+  background-color: white;
+  height: var(--mark-size);
+}
+.box.circle::after, 
+.box:not(.x):not(.circle):hover::after{
+  width: calc(var(--mark-size)*0.7);
+  height: calc(var(--mark-size)*0.7);
+  background-color: black;
+}
+  .box.circle::before, 
+  .box.circle::after,
+  .box:not(.x):not(.circle):hover::before,
+  .box:not(.x):not(.circle):hover::after{  
+  content: "";
+  position: absolute;
+  border-radius: 50%;}
+

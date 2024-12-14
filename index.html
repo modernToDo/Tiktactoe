@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tik tac toe</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+ 
+</head>
+
+<body>
+    <audio src="/src/audio/tictacaudio.mp3" class="audio" controls> Audio</audio>
+     <div class="container"> 
+        <h2 class="header" style="text-align: center; margin-bottom: 0px;"> Tic Tac Toe</h2>
+       
+        <div class="tiktac">
+            <div class=" box box1" ></div>
+            <div class=" box box2"></div>
+            <div class=" box box3"></div>
+            <div class=" box box4"></div>
+            <div class=" box box5"></div>
+            <div class=" box box6"></div>
+            <div class=" box box7"></div>
+            <div class=" box box8"></div>
+            <div class=" box box9"></div>
+        </div>
+        <div class="labels">
+            <span class="winner">Player</span>
+            <div class="title">
+                <span>Player(X)</span>
+                <span>Computer(0)</span>
+                <span>Tie</span>
+            </div>
+            <div class="count">
+                <span class="playercount">0</span>
+                <span class="computercount">0</span>
+                <span class="tiecount" style="margin-right: -17px;">0</span>
+            </div>
+        </div>
+    </div>
+        <i class="fa-solid fa-square-xmark"></i>
+<script src="src/newtictac.js"></script>
+</body>
+</html>

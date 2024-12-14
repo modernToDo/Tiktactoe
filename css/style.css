@@ -1,0 +1,111 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid greenyellow;
+  height: 500px;
+  width: 500px;
+  margin: auto;
+}
+
+.tiktac {
+  background-color: rgb(50, 49, 49);
+  height: 310px;
+  width: 310px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 105px 105px 105px;
+  gap: 0;
+  
+}
+.audio{
+
+  width: 100px;
+  height: 50px;
+  border: 1px solid rgb(21, 21, 20);
+  display: none;
+}
+.labels{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+.title{
+display: flex;
+flex-direction: row;
+width: 100%;
+justify-content: space-around;
+}
+.count{
+  display: flex;
+flex-direction: row;
+width: 100%;
+justify-content: space-around;
+}
+.box {
+  display: flex;
+  flex-direction: column-reverse;
+  font-weight: bold;
+  /* font-size: 1.3em; */
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(210, 203, 203);
+  margin: 0;
+  justify-content: center;      /* align the x and o horizontally */
+  align-items: center;          /* align the x and o vertically */
+  background-color: black;
+  color: aliceblue;
+  border: none;
+}
+
+:root {
+  --box-size: 100px;
+  --mark-size: calc(var(--box-size) * 0.9);
+}
+ .box.x,     /*Once they r clicked they prevent the cursor to click again as a disable function in input box or div */
+.box.circle {
+  pointer-events: none;
+}
+
+.box.x::before ,
+.box.x::after,
+.box:not(.x):not(.circle):hover::before,
+.box:not(.x):not(.circle):hover::after
+{
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+  background-color: white;
+}
+
+.box.x::before,
+.box:not(.x):not(.circle):hover::before{
+  transform: rotate(45deg);
+}
+.box.x::after ,
+.box:not(.x):not(.circle):hover::after{
+  transform: rotate(-45deg);
+}
+
+
+.box.circle::before ,
+.box:not(.x):not(.circle):hover::before{
+  width: var(--mark-size);
+  background-color: white;
+  height: var(--mark-size);
+}
+.box.circle::after, 
+.box:not(.x):not(.circle):hover::after{
+  width: calc(var(--mark-size)*0.8);
+  height: calc(var(--mark-size)*0.8);
+  background-color: black;
+}
+  .box.circle::before, 
+  .box.circle::after,
+  .box:not(.x):not(.circle):hover::before,
+  .box:not(.x):not(.circle):hover::after
+  {  
+  content: "";
+  position: absolute;
+  border-radius: 50%;}
